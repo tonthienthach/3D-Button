@@ -1,0 +1,75 @@
+:root {
+    --body-bg: #1a1a2e;
+    --btn-bg: #9b59b6;
+    --bgn-bg-darker: #8e44ad;
+    --btn-color:#ffffff;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+    background-color:var(--body-bg);
+
+}
+
+.container > .perspective ~.perspective {
+    margin-top: 190px;
+}
+
+.perspective {
+    perspective: 800px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color:var(--btn-bg);
+    color:var(--btn-color);
+    padding: 45px 180px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 15%;
+    height: 100%;
+    top: 0;
+    background-color: var(--bgn-bg-darker);
+    transform-origin: 0% 0%;
+}
+
+.btn-right::after {
+    left: 100%;
+    transform: rotateY(90deg);
+}
+
+.btn-right:hover {
+    transform: rotateY(-25deg);
+}
+
+.btn-left::after {
+    left: 0;
+    transform: rotateY(90deg);
+}
+
+.btn-left:hover {
+    transform: rotateY(25deg);
+}
